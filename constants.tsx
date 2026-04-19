@@ -25,6 +25,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'L-arginina em pó', qty: '5g (1 colher chá cheia)' },
       { name: 'L-citrulina em pó', qty: '3g' },
+      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
       { name: 'Suco de melancia natural', qty: '200ml' },
       { name: 'Banana', qty: '1 unidade' },
       { name: 'Aveia', qty: '30g' },
@@ -34,7 +35,11 @@ export const TONICS: Record<string, Tonic> = {
       'Bater tudo no liquidificador.',
       'Tomar pela manhã, 30-60 minutos antes do café da manhã.'
     ],
-    tips: ['A citrulina melhora a absorção da arginina.', 'Ideal para quem tem problemas vasculares.']
+    tips: [
+      'A citrulina melhora a absorção da arginina.',
+      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita (não há problema em misturar com os outros itens).',
+      'Ideal para quem tem problemas vasculares.'
+    ]
   },
   'suplemento-noturno-broxada': {
     id: 'suplemento-noturno-broxada',
@@ -92,6 +97,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'Extrato de Ginseng Coreano', qty: '200mg' },
       { name: 'Tribulus Terrestris', qty: '500mg' },
+      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
       { name: 'Banana (rica em triptofano)', qty: '1 unidade' },
       { name: 'Aveia', qty: '30g' },
       { name: 'Leite de amêndoas', qty: '200ml' },
@@ -101,7 +107,10 @@ export const TONICS: Record<string, Tonic> = {
       'Bater tudo no liquidificador.',
       'Tomar 1 hora antes da atividade sexual.'
     ],
-    tips: ['A banana e aveia ajudam na serenidade e controle.']
+    tips: [
+      'A banana e aveia ajudam na serenidade e controle.',
+      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita (não há problema em misturar com os outros itens).'
+    ]
   },
   'suplemento-diario-controle': {
     id: 'suplemento-diario-controle',
@@ -158,6 +167,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'L-arginina', qty: '6g' },
       { name: 'L-citrulina', qty: '2g' },
+      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
       { name: 'Zinco', qty: '30mg' },
       { name: 'Ginseng Vermelho', qty: '200mg' },
       { name: 'Suco de beterraba pequena', qty: '1 unidade' },
@@ -166,7 +176,10 @@ export const TONICS: Record<string, Tonic> = {
     instructions: [
       'Misturar tudo e tomar 2 horas antes da relação.'
     ],
-    tips: ['A beterraba é um supernitrato natural.']
+    tips: [
+      'A beterraba é um supernitrato natural.',
+      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita (não há problema em misturar com os outros itens).'
+    ]
   },
   'combinacao-noturna': {
     id: 'combinacao-noturna',
@@ -226,6 +239,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'Maca Peruana em pó', qty: '3g' },
       { name: 'Tribulus Terrestris', qty: '500mg' },
+      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
       { name: 'Zinco', qty: '30mg' },
       { name: 'Banana', qty: '1 unidade' },
       { name: 'Cacau em pó puro', qty: '30g' },
@@ -236,7 +250,35 @@ export const TONICS: Record<string, Tonic> = {
       'Bater tudo no liquidificador.',
       'Tomar pela manhã.'
     ],
-    tips: ['O cacau contém teobromina, um estimulante natural de bem-estar.']
+    tips: [
+      'O cacau contém teobromina, um estimulante natural de bem-estar.',
+      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita (não há problema em misturar com os outros itens).'
+    ]
+  },
+  'detox-vascular': {
+    id: 'detox-vascular',
+    name: 'Tônico Detox Vascular (CORE)',
+    icon: 'Droplet',
+    type: 'detox',
+    category: 'all',
+    timing: 'Em jejum por 7 dias',
+    serve: 'Limpeza profunda das artérias para restaurar a resposta erétil natural.',
+    benefits: ['Limpeza Arterial', 'Restauração Endotelial', 'Desintoxicação'],
+    ingredients: [
+      { name: 'Limão espremido', qty: '1 unidade' },
+      { name: 'Vinagre de maçã orgânico', qty: '1 colher sopa' },
+      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
+      { name: 'Água morna', qty: '200ml' }
+    ],
+    instructions: [
+      'Misturar o limão e o bicarbonato primeiro.',
+      'Adicionar a água morna e o vinagre.',
+      'Tomar em jejum logo ao acordar.'
+    ],
+    tips: [
+      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita para preparar o organismo.',
+      'Pode ser misturado com os outros ingredientes sem problemas.'
+    ]
   },
   'suplemento-hormonal-natural': {
     id: 'suplemento-hormonal-natural',
