@@ -25,7 +25,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'L-arginina em pó', qty: '5g (1 colher chá cheia)' },
       { name: 'L-citrulina em pó', qty: '3g' },
-      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
+      { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
       { name: 'Suco de melancia natural', qty: '200ml' },
       { name: 'Banana', qty: '1 unidade' },
       { name: 'Aveia', qty: '30g' },
@@ -97,7 +97,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'Extrato de Ginseng Coreano', qty: '200mg' },
       { name: 'Tribulus Terrestris', qty: '500mg' },
-      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
+      { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
       { name: 'Banana (rica em triptofano)', qty: '1 unidade' },
       { name: 'Aveia', qty: '30g' },
       { name: 'Leite de amêndoas', qty: '200ml' },
@@ -167,7 +167,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'L-arginina', qty: '6g' },
       { name: 'L-citrulina', qty: '2g' },
-      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
+      { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
       { name: 'Zinco', qty: '30mg' },
       { name: 'Ginseng Vermelho', qty: '200mg' },
       { name: 'Suco de beterraba pequena', qty: '1 unidade' },
@@ -239,7 +239,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'Maca Peruana em pó', qty: '3g' },
       { name: 'Tribulus Terrestris', qty: '500mg' },
-      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
+      { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
       { name: 'Zinco', qty: '30mg' },
       { name: 'Banana', qty: '1 unidade' },
       { name: 'Cacau em pó puro', qty: '30g' },
@@ -267,7 +267,7 @@ export const TONICS: Record<string, Tonic> = {
     ingredients: [
       { name: 'Limão espremido', qty: '1 unidade' },
       { name: 'Vinagre de maçã orgânico', qty: '1 colher sopa' },
-      { name: 'Bicarbonato de sódio', qty: '1 pitada (mínimo)' },
+      { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
       { name: 'Água morna', qty: '200ml' }
     ],
     instructions: [
