@@ -1,7 +1,8 @@
 
-import React from 'react';
-import { ChevronLeft, Activity, Target, ShieldCheck, Zap } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, Activity, Target, ShieldCheck, Zap, Play, Pause, RotateCcw, Clock, Target as TargetIcon, ChevronDown } from 'lucide-react';
 import { GlassCard } from '../components/GlassCard';
+import { Button } from '../components/Button';
 import { KEGEL_EXERCISES, SPECIAL_TECHNIQUES } from '../constants';
 
 interface KegelsViewProps {
@@ -26,6 +27,9 @@ export const KegelsView: React.FC<KegelsViewProps> = ({ onBack }) => {
           Fortalecer o assoalho pélvico é o pilar mais importante para controle ejaculatório e firmeza total.
         </p>
       </section>
+
+      {/* Advanced Kegel Trainer */}
+      <KegelTrainer />
 
       <div className="bg-black text-white p-6 rounded-[24px] space-y-4 shadow-xl">
         <h2 className="text-lg font-bold flex items-center gap-2">
@@ -88,5 +92,181 @@ export const KegelsView: React.FC<KegelsViewProps> = ({ onBack }) => {
         </p>
       </div>
     </div>
+  );
+};
+
+const KegelTrainer: React.FC = () => {
+  const [exercise, setExercise] = useState<number>(1);
+  const [week, setWeek] = useState<string>('1-2');
+  const [isRunning, setIsRunning] = useState(false);
+  const [phase, setPhase] = useState<'contract' | 'relax' | 'ready'>('ready');
+  const [timeLeft, setTimeLeft] = useState(5);
+  const [reps, setReps] = useState(0);
+
+  // Configuration map
+  const configs: Record<number, any> = {
+    1: { hold: 5, relax: 5, totalReps: 10, title: 'Básico/Em Pé' },
+    2: {
+      '1-2': { hold: 3, relax: 3, totalReps: 10, title: 'Avançado (W1-2)' },
+      '3-4': { hold: 5, relax: 5, totalReps: 15, title: 'Avançado (W3-4)' },
+      '5-6': { hold: 8, relax: 5, totalReps: 20, title: 'Avançado (W5-6)' },
+      '7+': { hold: 10, relax: 5, totalReps: 25, title: 'Avançado (W7+)' },
+    }
+  };
+
+  const currentConfig = exercise === 2 ? configs[2][week] : configs[1];
+
+  useEffect(() => {
+    let timer: any;
+    if (isRunning && reps < currentConfig.totalReps) {
+      if (timeLeft > 0) {
+        timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+      } else {
+        if (phase === 'contract') {
+          setPhase('relax');
+          setTimeLeft(currentConfig.relax);
+        } else {
+          setReps(reps + 1);
+          if (reps + 1 < currentConfig.totalReps) {
+            setPhase('contract');
+            setTimeLeft(currentConfig.hold);
+          } else {
+            setIsRunning(false);
+            setPhase('ready');
+          }
+        }
+      }
+    }
+    return () => clearTimeout(timer);
+  }, [isRunning, timeLeft, phase, reps, currentConfig]);
+
+  const startTraining = () => {
+    setReps(0);
+    setPhase('contract');
+    setTimeLeft(currentConfig.hold);
+    setIsRunning(true);
+  };
+
+  const stopTraining = () => {
+    setIsRunning(false);
+    setPhase('ready');
+    setTimeLeft(currentConfig.hold);
+  };
+
+  return (
+    <GlassCard className="p-0 border-none shadow-2xl bg-white rounded-[32px] overflow-hidden flex flex-col">
+      <div className="p-6 bg-gray-50 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h3 className="text-sm font-black text-black uppercase tracking-widest flex items-center gap-2">
+            <TargetIcon size={16} className="text-[#E63946]" /> Treinador Assistido
+          </h3>
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tight mt-1">Sincronize sua contração com o cronômetro</p>
+        </div>
+        
+        <div className="flex items-center gap-3">
+          <div className="flex bg-white p-1 rounded-xl shadow-sm border border-gray-200">
+            {[1, 2].map((ex) => (
+              <button
+                key={ex}
+                onClick={() => {
+                  setExercise(ex);
+                  stopTraining();
+                }}
+                disabled={isRunning}
+                className={`px-4 h-8 rounded-lg text-[10px] whitespace-nowrap font-bold transition-all ${exercise === ex ? 'bg-[#E63946] text-white' : 'text-gray-400 hover:text-black'}`}
+              >
+                {ex === 1 ? 'NÍVEL 1 & 2' : 'NÍVEL 3 (AVANÇADO)'}
+              </button>
+            ))}
+          </div>
+          
+          {exercise === 2 && (
+            <div className="relative group min-w-[120px]">
+              <select 
+                value={week}
+                onChange={(e) => {
+                  setWeek(e.target.value);
+                  stopTraining();
+                }}
+                disabled={isRunning}
+                className="w-full appearance-none bg-white pl-4 pr-10 py-2 rounded-xl border border-gray-200 text-[10px] font-bold uppercase tracking-tight shadow-sm outline-none cursor-pointer focus:ring-2 focus:ring-[#E63946]/20 transition-all"
+              >
+                <option value="1-2">Semana 1-2</option>
+                <option value="3-4">Semana 3-4</option>
+                <option value="5-6">Semana 5-6</option>
+                <option value="7+">Semana 7+</option>
+              </select>
+              <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="p-8 flex flex-col items-center gap-10">
+        <div className="grid grid-cols-3 w-full max-w-sm divide-x divide-gray-100">
+           <div className="text-center px-2">
+              <span className="text-[9px] font-black text-gray-400 uppercase block mb-1">Contração</span>
+              <span className="text-lg font-bold text-black">{currentConfig.hold}s</span>
+           </div>
+           <div className="text-center px-2">
+              <span className="text-[9px] font-black text-gray-400 uppercase block mb-1">Descanso</span>
+              <span className="text-lg font-bold text-black">{currentConfig.relax}s</span>
+           </div>
+           <div className="text-center px-2">
+              <span className="text-[9px] font-black text-gray-400 uppercase block mb-1">Séries</span>
+              <span className="text-lg font-bold text-black">{currentConfig.totalReps}x</span>
+           </div>
+        </div>
+
+        <div className="relative group">
+          <div className={`absolute inset-0 rounded-full blur-3xl opacity-20 transition-all duration-700 ${phase === 'contract' ? 'bg-[#E63946] scale-125' : phase === 'relax' ? 'bg-blue-400 scale-110' : 'bg-transparent'}`}></div>
+          <div className={`relative w-48 h-48 rounded-full border-2 flex flex-col items-center justify-center transition-all duration-500 shadow-xl ${phase === 'contract' ? 'border-[#E63946] scale-105 bg-white' : phase === 'relax' ? 'border-blue-200 scale-100 bg-white' : 'border-gray-100 bg-gray-50'}`}>
+            {phase === 'ready' ? (
+              <Activity size={48} className="text-gray-300" />
+            ) : (
+              <>
+                <span className={`text-6xl font-black mb-1 tabular-nums ${phase === 'contract' ? 'text-[#E63946] animate-in zoom-in-75 duration-300' : 'text-blue-500'}`}>{timeLeft}</span>
+                <span className={`text-[11px] font-black uppercase tracking-[0.2em] ${phase === 'contract' ? 'text-[#E63946]' : 'text-blue-500 font-bold'}`}>
+                  {phase === 'contract' ? 'CONTRAIA' : 'RELUAXE'}
+                </span>
+              </>
+            )}
+          </div>
+        </div>
+
+        <div className="w-full max-w-xs animate-in fade-in slide-in-from-bottom-2 duration-700">
+          <div className="flex justify-between text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">
+            <span className="flex items-center gap-1.5"><Clock size={12} /> Progresso Muscular</span>
+            <span>{reps} / {currentConfig.totalReps}</span>
+          </div>
+          <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden shadow-inner p-0.5">
+            <div 
+              className="h-full gradient-primary rounded-full transition-all duration-500 shadow-sm"
+              style={{ width: `${(reps / currentConfig.totalReps) * 100}%` }}
+            ></div>
+          </div>
+        </div>
+
+        <div className="flex gap-4 w-full max-w-xs">
+          {isRunning ? (
+            <button 
+              onClick={stopTraining}
+              className="flex-1 h-14 bg-black text-white rounded-2xl font-bold flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg overflow-hidden relative group"
+            >
+              <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+              <Pause size={20} className="relative z-10" /> <span className="relative z-10 uppercase tracking-widest text-xs">Parar Agora</span>
+            </button>
+          ) : (
+            <button 
+              onClick={startTraining}
+              className="flex-1 h-14 bg-[#E63946] text-white rounded-2xl font-bold flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg shadow-[#E63946]/20 relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform skew-x-12"></div>
+              <Play size={20} className="relative z-10" /> <span className="relative z-10 uppercase tracking-widest text-xs">Iniciar Série</span>
+            </button>
+          )}
+        </div>
+      </div>
+    </GlassCard>
   );
 };

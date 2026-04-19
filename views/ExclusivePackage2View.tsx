@@ -9,62 +9,64 @@ interface ExclusivePackage2ViewProps {
 
 export const ExclusivePackage2View: React.FC<ExclusivePackage2ViewProps> = ({ onBack }) => {
   return (
-    <div className="space-y-10 animate-in fade-in slide-in-from-right-4 duration-500 pb-12 max-w-2xl mx-auto">
-      <div className="flex items-center justify-between">
-        <button onClick={onBack} className="flex items-center gap-2 text-[#86868B] hover:text-black transition-colors font-semibold text-sm tracking-tight">
-          <ChevronLeft size={20} /> Voltar
-        </button>
-        <span className="bg-[#E63946] text-white px-3 py-1 rounded-full text-[11px] font-semibold shadow-sm tracking-tight flex items-center gap-2">
-          <BookOpen size={12} className="text-white" /> Biblioteca VIP
-        </span>
-      </div>
+    <div className="fixed inset-0 z-50 bg-[#F8F9FA] flex flex-col animate-in fade-in duration-500 overflow-hidden">
+      <header className="bg-white border-b border-gray-100 flex items-center justify-between px-6 py-4 z-50 shadow-sm shrink-0">
+        <div className="flex items-center gap-4">
+          <button onClick={onBack} className="flex items-center gap-2 text-[#86868B] hover:text-black transition-colors font-semibold text-sm tracking-tight">
+            <ChevronLeft size={20} /> Voltar
+          </button>
+          <span className="font-bold text-[13px] tracking-tight text-black flex items-center gap-2 uppercase">
+            <BookOpen size={16} className="text-[#E63946]" /> BIBLIOTECA VIP
+          </span>
+        </div>
+        <div className="bg-[#E63946] text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">
+          Premium
+        </div>
+      </header>
 
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-black tracking-tight mb-1">125 Posições Sexuais</h1>
-        <p className="text-[#86868B] font-semibold text-[11px] tracking-tight">Manuais e Guias de Domínio</p>
-      </div>
+      <div className="flex-1 overflow-y-auto w-full bg-black">
+        <div className="p-8 text-center bg-black">
+          <h1 className="text-3xl font-bold text-white tracking-tight mb-1">125 Posições Sexuais</h1>
+          <p className="text-white/40 font-semibold text-[11px] tracking-tight uppercase">Manuais e Guias de Domínio Corporal</p>
+        </div>
 
-      <div className="space-y-12">
-        <div className="space-y-4">
-          <div className="flex items-center gap-4 ml-2">
-            <div className="w-1.5 h-6 gradient-primary rounded-full"></div>
-            <h2 className="text-xl font-bold text-black tracking-tight">Volume 01: Fundamentos</h2>
+        <div className="space-y-0">
+          <div className="bg-gray-900 border-y border-white/5 px-6 py-4 sticky top-0 z-10 flex items-center justify-between">
+             <div className="flex items-center gap-3">
+               <div className="w-1 h-5 gradient-primary rounded-full"></div>
+               <h2 className="text-sm font-bold text-white uppercase tracking-widest">Volume 01: Fundamentos</h2>
+             </div>
+             <span className="text-[9px] font-black text-white/30 uppercase tracking-tighter">Posições 01-60</span>
           </div>
-          <GlassCard className="p-0 overflow-hidden shadow-lg border-none bg-white rounded-3xl">
-            <div style={{ position: 'relative', width: '100%', height: 0, paddingBottom: '140%' }}>
-              <iframe 
+          <div className="w-full aspect-[4/7] bg-zinc-900">
+             <iframe 
                 src="https://drive.google.com/file/d/1rYLln70gHfTpU_57oU5baKIz0nqABclY/preview" 
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} 
+                className="w-full h-full border-none opacity-90 hover:opacity-100 transition-opacity"
                 allowFullScreen={true}
+                title="Volume 01"
               ></iframe>
-            </div>
-          </GlassCard>
-        </div>
-
-        <div className="space-y-4">
-          <div className="flex items-center gap-4 ml-2">
-            <div className="w-1.5 h-6 gradient-primary rounded-full"></div>
-            <h2 className="text-xl font-bold text-black tracking-tight">Volume 02: Performance</h2>
           </div>
-          <GlassCard className="p-0 overflow-hidden shadow-lg border-none bg-white rounded-3xl">
-            <div style={{ position: 'relative', width: '100%', height: 0, paddingBottom: '140%' }}>
-              <iframe 
-                src="https://drive.google.com/file/d/1i6WheI8SUpHrRee61MrwqpJnyOdYh2_d/preview" 
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} 
-                allowFullScreen={true}
-              ></iframe>
-            </div>
-          </GlassCard>
-        </div>
-      </div>
 
-      <div className="p-8 bg-black text-white rounded-3xl flex items-center gap-6 shadow-xl">
-        <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white shadow-sm border border-white/10">
-          <Download size={28} />
+          <div className="bg-gray-900 border-y border-white/5 px-6 py-4 sticky top-0 z-10 flex items-center justify-between mt-0">
+             <div className="flex items-center gap-3">
+               <div className="w-1 h-5 gradient-primary rounded-full"></div>
+               <h2 className="text-sm font-bold text-white uppercase tracking-widest">Volume 02: Performance</h2>
+             </div>
+             <span className="text-[9px] font-black text-white/30 uppercase tracking-tighter">Posições 61-125</span>
+          </div>
+          <div className="w-full aspect-[4/7] bg-zinc-900">
+             <iframe 
+                src="https://drive.google.com/file/d/1i6WheI8SUpHrRee61MrwqpJnyOdYh2_d/preview" 
+                className="w-full h-full border-none opacity-90 hover:opacity-100 transition-opacity"
+                allowFullScreen={true}
+                title="Volume 02"
+              ></iframe>
+          </div>
         </div>
-        <div>
-          <h4 className="font-bold tracking-tight">Leitura Recomendada</h4>
-          <p className="text-xs text-gray-400 font-medium mt-1">Estes guias complementam o seu tratamento bioquímico com técnica pura.</p>
+
+        <div className="p-10 text-center bg-black">
+           <Download size={32} className="mx-auto text-[#E63946] mb-4" />
+           <p className="text-sm text-white/40 font-medium">Fim do conteúdo VIP</p>
         </div>
       </div>
     </div>
