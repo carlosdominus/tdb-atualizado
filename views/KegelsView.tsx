@@ -155,16 +155,16 @@ const KegelTrainer: React.FC = () => {
 
   return (
     <GlassCard className="p-0 border-none shadow-2xl bg-white rounded-[32px] overflow-hidden flex flex-col">
-      <div className="p-6 bg-gray-50 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h3 className="text-sm font-black text-black uppercase tracking-widest flex items-center gap-2">
+      <div className="p-6 bg-gray-50 border-b border-gray-100 space-y-6">
+        <div className="text-center sm:text-left">
+          <h3 className="text-sm font-black text-black uppercase tracking-widest flex items-center justify-center sm:justify-start gap-2">
             <TargetIcon size={16} className="text-[#E63946]" /> Treinador Assistido
           </h3>
           <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tight mt-1">Sincronize sua contração com o cronômetro</p>
         </div>
         
-        <div className="flex items-center gap-3">
-          <div className="flex bg-white p-1 rounded-xl shadow-sm border border-gray-200">
+        <div className="flex flex-col gap-3">
+          <div className="flex bg-white p-1 rounded-xl shadow-sm border border-gray-200 w-full overflow-x-auto no-scrollbar">
             {[1, 2].map((ex) => (
               <button
                 key={ex}
@@ -173,48 +173,50 @@ const KegelTrainer: React.FC = () => {
                   stopTraining();
                 }}
                 disabled={isRunning}
-                className={`px-4 h-8 rounded-lg text-[10px] whitespace-nowrap font-bold transition-all ${exercise === ex ? 'bg-[#E63946] text-white' : 'text-gray-400 hover:text-black'}`}
+                className={`flex-1 h-10 rounded-lg text-[10px] whitespace-nowrap font-bold transition-all px-2 ${exercise === ex ? 'bg-[#E63946] text-white shadow-md' : 'text-gray-400 hover:text-black'}`}
               >
-                {ex === 1 ? 'NÍVEL 1 & 2' : 'NÍVEL 3 (AVANÇADO)'}
+                {ex === 1 ? 'NÍVEL 1 & 2 (INICIAL)' : 'NÍVEL 3 (AVANÇADO)'}
               </button>
             ))}
           </div>
           
           {exercise === 2 && (
-            <div className="relative group min-w-[120px]">
-              <select 
-                value={week}
-                onChange={(e) => {
-                  setWeek(e.target.value);
-                  stopTraining();
-                }}
-                disabled={isRunning}
-                className="w-full appearance-none bg-white pl-4 pr-10 py-2 rounded-xl border border-gray-200 text-[10px] font-bold uppercase tracking-tight shadow-sm outline-none cursor-pointer focus:ring-2 focus:ring-[#E63946]/20 transition-all"
-              >
-                <option value="1-2">Semana 1-2</option>
-                <option value="3-4">Semana 3-4</option>
-                <option value="5-6">Semana 5-6</option>
-                <option value="7+">Semana 7+</option>
-              </select>
-              <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            <div className="animate-in slide-in-from-top-2 duration-300">
+               <div className="relative">
+                <select 
+                  value={week}
+                  onChange={(e) => {
+                    setWeek(e.target.value);
+                    stopTraining();
+                  }}
+                  disabled={isRunning}
+                  className="w-full appearance-none bg-white px-4 py-3 rounded-xl border border-gray-200 text-[11px] font-bold uppercase tracking-widest shadow-sm outline-none cursor-pointer focus:ring-2 focus:ring-[#E63946]/20 transition-all text-center"
+                >
+                  <option value="1-2">Semana 1-2 (3s Contrair)</option>
+                  <option value="3-4">Semana 3-4 (5s Contrair)</option>
+                  <option value="5-6">Semana 5-6 (8s Contrair)</option>
+                  <option value="7+">Semana 7+ (10s Contrair)</option>
+                </select>
+                <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+              </div>
             </div>
           )}
         </div>
       </div>
 
       <div className="p-8 flex flex-col items-center gap-10">
-        <div className="grid grid-cols-3 w-full max-w-sm divide-x divide-gray-100">
-           <div className="text-center px-2">
-              <span className="text-[9px] font-black text-gray-400 uppercase block mb-1">Contração</span>
-              <span className="text-lg font-bold text-black">{currentConfig.hold}s</span>
+        <div className="grid grid-cols-3 w-full max-w-sm divide-x divide-gray-100 border-y border-gray-50 py-4">
+           <div className="text-center px-1">
+              <span className="text-[8px] font-black text-gray-400 uppercase block mb-1 tracking-tighter">Contração</span>
+              <span className="text-base font-bold text-black">{currentConfig.hold}s</span>
            </div>
-           <div className="text-center px-2">
-              <span className="text-[9px] font-black text-gray-400 uppercase block mb-1">Descanso</span>
-              <span className="text-lg font-bold text-black">{currentConfig.relax}s</span>
+           <div className="text-center px-1">
+              <span className="text-[8px] font-black text-gray-400 uppercase block mb-1 tracking-tighter">Descanso</span>
+              <span className="text-base font-bold text-black">{currentConfig.relax}s</span>
            </div>
-           <div className="text-center px-2">
-              <span className="text-[9px] font-black text-gray-400 uppercase block mb-1">Séries</span>
-              <span className="text-lg font-bold text-black">{currentConfig.totalReps}x</span>
+           <div className="text-center px-1">
+              <span className="text-[8px] font-black text-gray-400 uppercase block mb-1 tracking-tighter">Séries</span>
+              <span className="text-base font-bold text-black">{currentConfig.totalReps}x</span>
            </div>
         </div>
 
