@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Protocolo Força Natural</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #E63946;
+        --primary-dark: #8B0000;
+        --bg-light: #F2F2F7; /* Apple light gray */
+        --text-main: #1D1D1F; /* Apple text color */
+        --radius-apple: 20px;
+      }
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        -webkit-overflow-scrolling: touch;
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: -0.011em;
+      }
+      h1, h2, h3, .font-poppins {
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: -0.02em;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .glass-dark {
+        background: rgba(28, 28, 30, 0.8);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .gradient-primary {
+        background: linear-gradient(180deg, #FF3B30 0%, #E63946 100%);
+      }
+      .ease-apple {
+        transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 5s ease-in-out infinite;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+        border-radius: 12px;
+      }
+      .ios-shadow {
+        box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://chat.auto-jornada.space";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'Px5GPQn2ukGNvv4TVzWQpD7q',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
