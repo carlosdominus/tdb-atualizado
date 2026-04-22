@@ -14,7 +14,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onClose }) => {
       {/* Floating Close Button */}
       <button 
         onClick={onClose}
-        className="fixed top-6 right-6 z-[110] w-12 h-12 bg-black/10 hover:bg-black/20 backdrop-blur-md text-black transition-all rounded-full flex items-center justify-center shadow-lg group"
+        className="fixed top-6 right-6 z-[110] w-12 h-12 bg-white hover:bg-zinc-100 text-black transition-all rounded-full flex items-center justify-center shadow-2xl group border border-black/5"
         title="Fechar e ir para o Painel"
       >
         <X size={24} className="group-hover:scale-110 transition-transform" />
