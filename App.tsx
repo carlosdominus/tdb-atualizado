@@ -262,22 +262,7 @@ const App: React.FC = () => {
   };
 
   const shouldShowLaraPopup = () => {
-    if (!state.isLoggedIn || !state.user?.onboardingCompleted || !state.hasSeenWelcomeVideo) return false;
-    if (currentView === View.UPSELL || currentView === View.LOGIN || currentView === View.ONBOARDING) return false;
-    
-    const today = new Date().toISOString().split('T')[0];
-    if (state.lastLaraPopupDate === today) return false;
-
-    // Cálculo de dias ativos (mesma lógica do ProfileView)
-    const createdDate = new Date(state.user?.createdAt || new Date());
-    createdDate.setHours(0, 0, 0, 0);
-    const todayDate = new Date();
-    todayDate.setHours(0, 0, 0, 0);
-    const diffTime = Math.abs(todayDate.getTime() - createdDate.getTime());
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
-
-    // 1 dia sim, um dia não (Dias 1, 3, 5, 7...)
-    return diffDays % 2 !== 0;
+    return false;
   };
 
   const renderView = () => {

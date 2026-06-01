@@ -69,17 +69,45 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ state, onNavigate,
         </p>
       </section>
 
+      {/* Quick Access Today - Placed on Top */}
+      <section className="space-y-4">
+        <div className="flex items-center justify-between px-2">
+          <h3 className="text-xs font-bold text-[#86868B] tracking-wider uppercase">Atalho de Hoje</h3>
+        </div>
+        <GlassCard className="relative overflow-hidden border border-gray-100 shadow-sm p-6 bg-white hover:bg-gray-50/50 transition-all rounded-2xl cursor-pointer" onClick={() => onTonicNavigate(mainTonicId)}>
+          <div className="flex items-center justify-between gap-4">
+             <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gray-50 text-[#E63946] rounded-xl flex items-center justify-center shrink-0 border border-gray-100">
+                  <MainIcon size={24} />
+                </div>
+                <div>
+                  <h2 className="text-base font-bold text-black tracking-tight leading-tight">{mainTonic.name}</h2>
+                  <p className="text-[10px] font-medium text-[#86868B] mt-0.5">{mainTonic.timing}</p>
+                </div>
+             </div>
+             <div className={`flex items-center gap-2 text-[11px] font-bold tracking-tight ${todayCheck.mainTonic ? 'text-[#2ECC71]' : 'text-gray-300'}`}>
+                {todayCheck.mainTonic ? <CheckCircle2 size={24} className="text-[#21BA46]" /> : <Circle size={24} />}
+             </div>
+          </div>
+        </GlassCard>
+      </section>
+
       {/* Primary Problem Pages */}
       <section className="space-y-5">
-        <div className="flex items-center justify-between px-2">
-          <h3 className="text-[11px] font-bold text-gray-400 tracking-widest uppercase">🔴 Resolver Problemas</h3>
+        <div className="px-2 space-y-1.5">
+          <h3 className="text-xl font-black text-black tracking-tight uppercase">
+            🔴 Resolver Problemas
+          </h3>
+          <p className="text-xs text-gray-500 font-semibold leading-relaxed">
+            Selecione o seu principal sintoma ou dificuldade hoje para liberar o cardápio e os aceleradores de resultados específicos.
+          </p>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <ProblemCard 
             title="Broxada"
             subtitle="Falta de ereção"
             icon={<Zap size={22} />}
-            color="bg-red-50 text-red-600"
+            color="bg-red-50 text-red-600 animate-pulse"
             onClick={() => onNavigate(View.PROBLEM_DETAIL, 'broxada')}
           />
           <ProblemCard 
@@ -109,10 +137,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ state, onNavigate,
       {/* Exercises & Mind */}
       <section className="space-y-4">
         <div className="flex items-center justify-between px-2">
-          <h3 className="text-[10px] font-bold text-gray-400 tracking-wider uppercase">💪 Exercícios & Mente</h3>
+          <h3 className="text-[10px] font-bold text-[#86868B] tracking-wider uppercase">💪 Exercícios & Mente</h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <GlassCard onClick={() => onNavigate(View.KEGELS)} className="p-6 border-none shadow-sm bg-white hover:bg-gray-50 flex items-center gap-6 rounded-2xl group transition-all">
+          <GlassCard onClick={() => onNavigate(View.KEGELS)} className="p-6 border-none shadow-sm bg-white hover:bg-gray-50 flex items-center gap-6 rounded-2xl group transition-all cursor-pointer">
              <div className="w-14 h-14 bg-gray-50 text-black rounded-xl flex items-center justify-center group-hover:bg-[#E63946] group-hover:text-white transition-all shadow-sm shrink-0">
                 <Activity size={28} />
              </div>
@@ -123,7 +151,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ state, onNavigate,
              <ChevronRight size={20} className="ml-auto text-gray-300 group-hover:text-black transition-all" />
           </GlassCard>
 
-          <GlassCard onClick={() => onNavigate(View.ANSIEDADE)} className="p-6 border-none shadow-sm bg-white hover:bg-gray-50 flex items-center gap-6 rounded-2xl group transition-all">
+          <GlassCard onClick={() => onNavigate(View.ANSIEDADE)} className="p-6 border-none shadow-sm bg-white hover:bg-gray-50 flex items-center gap-6 rounded-2xl group transition-all cursor-pointer">
              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm shrink-0">
                 <Brain size={28} />
              </div>
@@ -134,29 +162,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ state, onNavigate,
              <ChevronRight size={20} className="ml-auto text-gray-300 group-hover:text-blue-600 transition-all" />
           </GlassCard>
         </div>
-      </section>
-
-      {/* Quick Access Today */}
-      <section className="space-y-4">
-        <div className="flex items-center justify-between px-2">
-          <h3 className="text-[10px] font-bold text-gray-400 tracking-wider uppercase">Atalho de Hoje</h3>
-        </div>
-        <GlassCard className="relative overflow-hidden border-none shadow-sm p-6 bg-white rounded-2xl" onClick={() => onTonicNavigate(mainTonicId)}>
-          <div className="flex items-center justify-between gap-4">
-             <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gray-50 text-[#E63946] rounded-xl flex items-center justify-center shrink-0">
-                  <MainIcon size={24} />
-                </div>
-                <div>
-                  <h2 className="text-base font-bold text-black tracking-tight leading-tight">{mainTonic.name}</h2>
-                  <p className="text-[10px] font-medium text-gray-400">{mainTonic.timing}</p>
-                </div>
-             </div>
-             <div className={`flex items-center gap-2 text-[11px] font-bold tracking-tight ${todayCheck.mainTonic ? 'text-[#2ECC71]' : 'text-gray-300'}`}>
-                {todayCheck.mainTonic ? <CheckCircle2 size={20} /> : <Circle size={20} />}
-             </div>
-          </div>
-        </GlassCard>
       </section>
     </div>
   );

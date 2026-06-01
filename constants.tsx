@@ -20,11 +20,11 @@ export const TONICS: Record<string, Tonic> = {
     type: 'main',
     category: 'broxada',
     timing: 'Manhã, 30-60 min antes do café',
-    serve: 'A L-arginina aumenta a produção de óxido nítrico, que relaxa os vasos sanguíneos penianos.',
+    serve: 'As sementes de abóbora e melancia são ricas em L-arginina e L-citrulina naturais, estimulando o óxido nítrico para relaxar os vasos penianos.',
     benefits: ['Aumento de Óxido Nítrico', 'Relaxamento Vascular', 'Fluxo Sanguíneo'],
     ingredients: [
-      { name: 'L-arginina em pó', qty: '5g (1 colher chá cheia)' },
-      { name: 'L-citrulina em pó', qty: '3g' },
+      { name: 'Sementes de melancia trituradas', qty: '3 colheres sopa (Citrulina natural)' },
+      { name: 'Sementes de abóbora moídas', qty: '2 colheres sopa (Arginina natural)' },
       { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
       { name: 'Suco de melancia natural', qty: '200ml' },
       { name: 'Banana', qty: '1 unidade' },
@@ -32,33 +32,36 @@ export const TONICS: Record<string, Tonic> = {
       { name: 'Mel', qty: '1 colher sobremesa' }
     ],
     instructions: [
-      'Bater tudo no liquidificador.',
+      'Bater tudo no liquidificador até obter uma consistência homogênea.',
       'Tomar pela manhã, 30-60 minutos antes do café da manhã.'
     ],
     tips: [
-      'A citrulina melhora a absorção da arginina.',
-      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita (não há problema em misturar com os outros itens).',
-      'Ideal para quem tem problemas vasculares.'
+      'As sementes fornecem aminoácidos em matriz viva totalmente natural.',
+      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita para preparar o organismo (sem problema de mistura).',
+      'Ideal para otimizar a saúde vascular naturalmente.'
     ]
   },
   'suplemento-noturno-broxada': {
     id: 'suplemento-noturno-broxada',
-    name: 'Suplemento Noturno Anti-Broxada',
+    name: 'Infusão Noturna Anti-Broxada',
     icon: 'Moon',
     type: 'complementary',
     category: 'broxada',
     timing: '1 hora antes de dormir',
-    serve: 'O ginseng aumenta óxido nítrico e inibe prolactina, melhorando a função erétil.',
+    serve: 'A raiz natural de ginseng estimula o óxido nítrico, enquanto as sementes fornecem zinco e arginina orgânicos.',
     benefits: ['Melhora Função Erétil', 'Controle Hormonal', 'Reparação Noturna'],
     ingredients: [
-      { name: 'Extrato de Ginseng Vermelho Coreano', qty: '350mg (cápsula)' },
-      { name: 'Zinco quelato', qty: '30mg' },
-      { name: 'L-arginina', qty: '2g' }
+      { name: 'Pó de Raiz de Ginseng Vermelho Coreano', qty: '1 colher de café' },
+      { name: 'Sementes de abóbora inteiras ou moídas', qty: '3 colheres sopa (Zinco natural)' },
+      { name: 'Castanha do Pará triturada', qty: '2 unidades (Arginina e Selênio)' }
     ],
     instructions: [
-      'Tomar 1 hora antes de dormir com água.'
+      'Consumir as sementes e castanhas, e em seguida tomar o chá de ginseng diluído em água morna, 1 hora antes de dormir.'
     ],
-    tips: ['Estudos mostram 60% de melhora no desempenho.']
+    tips: [
+      'Fontes puramente vegetais e minerais orgânicos para reparação hormonal noturna.',
+      'Uso contínuo excelente para densidade de capilares.'
+    ]
   },
   'cha-circulatorio': {
     id: 'cha-circulatorio',
@@ -95,8 +98,8 @@ export const TONICS: Record<string, Tonic> = {
     serve: 'O triptofano ajuda na produção de serotonina, que regula o reflexo ejaculatório.',
     benefits: ['Regulação de Serotonina', 'Controle de Reflexo', 'Estabilidade Glicêmica'],
     ingredients: [
-      { name: 'Extrato de Ginseng Coreano', qty: '200mg' },
-      { name: 'Tribulus Terrestris', qty: '500mg' },
+      { name: 'Raiz de Ginseng Coreano em pó', qty: '1 colher de café' },
+      { name: 'Tribulus Terrestris em pó', qty: '1 colher de chá' },
       { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
       { name: 'Banana (rica em triptofano)', qty: '1 unidade' },
       { name: 'Aveia', qty: '30g' },
@@ -114,23 +117,23 @@ export const TONICS: Record<string, Tonic> = {
   },
   'suplemento-diario-controle': {
     id: 'suplemento-diario-controle',
-    name: 'Suplemento Diário para Controle',
+    name: 'Nutrientes do Cerrado para Controle',
     icon: 'Shield',
     type: 'complementary',
     category: 'gozo-rapido',
     timing: 'Após o almoço, diariamente',
-    serve: 'O zinco é essencial para a síntese de testosterona e controle ejaculatório.',
-    benefits: ['Saúde Testicular', 'Síntese de Testosterona', 'Regulação Nervosa'],
+    serve: 'O gergelim e o cacau fornecem magnésio e zinco biodisponíveis para a regulação nervosa.',
+    benefits: ['Saúde Testicular', 'Controle do Reflexo', 'Regulação Nervosa'],
     ingredients: [
-      { name: 'Zinco quelato', qty: '25mg' },
-      { name: 'Magnésio', qty: '200mg' },
-      { name: 'Ômega-3', qty: '1000mg' },
-      { name: 'Vitamina B6', qty: '100mg' }
+      { name: 'Óleo de Linhaça Prensado a Frio', qty: '1 colher de sopa (Ômega-3 natural)' },
+      { name: 'Gergelim preto integral moído', qty: '2 colheres sopa (Zinco natural)' },
+      { name: 'Cacau 100% puro em pó', qty: '1 colher sopa (Magnésio e Serotonina natural)' },
+      { name: 'Banana da terra cozida', qty: '1 unidade (Vitamina B6 natural)' }
     ],
     instructions: [
-      'Tomar 1 cápsula de cada após o almoço.'
+      'Misturar o gergelim e cacau na banana cozida e regar com o óleo de linhaça após o almoço.'
     ],
-    tips: ['Magnésio e B6 ajudam a regular os neurotransmissores do controle.']
+    tips: ['Associação sinérgica de alimentos integrais que acalmam o sistema nervoso pélvico.']
   },
   'cha-calmante-sexual': {
     id: 'cha-calmante-sexual',
@@ -162,45 +165,44 @@ export const TONICS: Record<string, Tonic> = {
     type: 'main',
     category: 'pau-meia-bomba',
     timing: '2 horas antes da relação',
-    serve: 'Aumenta drasticamente o óxido nítrico, melhorando a rigidez em até 74%.',
+    serve: 'A beterraba concentrada combinada com sementes de abóbora atuam liberando altos níveis de óxido nítrico dador de rigidez.',
     benefits: ['Máxima Rigidez', 'Pico de Óxido Nítrico', 'Prontidão Imediata'],
     ingredients: [
-      { name: 'L-arginina', qty: '6g' },
-      { name: 'L-citrulina', qty: '2g' },
+      { name: 'Pó concentrado de beterraba liofilizada', qty: '1 colher de sopa (Nitrato puro)' },
+      { name: 'Sementes de abóbora descascadas moídas', qty: '2 colheres de sopa (Arginina vegetal)' },
       { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
-      { name: 'Zinco', qty: '30mg' },
-      { name: 'Ginseng Vermelho', qty: '200mg' },
-      { name: 'Suco de beterraba pequena', qty: '1 unidade' },
-      { name: 'Água', qty: '100ml' }
+      { name: 'Gergelim integral torrado moído', qty: '1 colher de sopa (Zinco vegetal)' },
+      { name: 'Pó de Raiz de Ginseng Vermelho', qty: '1/2 colher de chá' },
+      { name: 'Suco de Beterraba fresca coado', qty: '150ml' },
+      { name: 'Água filtrada', qty: '50ml' }
     ],
     instructions: [
-      'Misturar tudo e tomar 2 horas antes da relação.'
+      'Misturar bem todos os ingredientes de forma homogênea e tomar 2 horas antes da relação.'
     ],
     tips: [
-      'A beterraba é um supernitrato natural.',
-      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita (não há problema em misturar com os outros itens).'
+      'A beterraba e o ginseng são amplamente respaldados para aumento de dilatação arterial local.',
+      'O Bicarbonato de sódio deve ser usado APENAS na primeira vez que fizer a receita (sem problema de mistura).'
     ]
   },
   'combinacao-noturna': {
     id: 'combinacao-noturna',
-    name: 'Combinação Noturna para Rigidez',
+    name: 'Mix de Ervas Noturno para Rigidez',
     icon: 'Moon',
     type: 'complementary',
     category: 'pau-meia-bomba',
     timing: 'Metade manhã, metade noite',
-    serve: 'Ataca múltiplas vias: circulação, óxido nítrico e libido simultaneamente.',
+    serve: 'Complexo de raízes e sementes vegetais agem de forma prolongada no tônus dos corpos cavernosos.',
     benefits: ['Manutenção da Rigidez', 'Circularidade Persistente', 'Suporte Integral'],
     ingredients: [
       { name: 'Maca Peruana em pó', qty: '3g' },
-      { name: 'Tribulus Terrestris', qty: '500mg' },
-      { name: 'Ginseng Vermelho Coreano', qty: '350mg' },
-      { name: 'Zinco quelato', qty: '30mg' }
+      { name: 'Tribulus Terrestris em pó', qty: '1 colher de chá' },
+      { name: 'Ginseng Vermelho Coreano em pó', qty: '1/2 colher de chá' },
+      { name: 'Sementes de abóbora douradas inteiras', qty: '2 colheres sopa (Zinco ativo)' }
     ],
     instructions: [
-      'Dividir em 2 doses.',
-      'Tomar metade pela manhã e metade à noite.'
+      'Ingerir as sementes e preparar os pós na forma de chá morno ou misturados em mel. Dividir em duas doses (metade de manhã, metade à noite).'
     ],
-    tips: ['Uso contínuo traz melhores resultados para a densidade cavernosa.']
+    tips: ['Uso contínuo excelente para a densidade cavernosa e circulação pélvica de forma 100% natural.']
   },
   'suco-verde-circulatorio': {
     id: 'suco-verde-circulatorio',
@@ -234,21 +236,20 @@ export const TONICS: Record<string, Tonic> = {
     type: 'main',
     category: 'sem-tesao',
     timing: 'Pela manhã',
-    serve: 'A maca peruana melhora significativamente o desejo sexual crônico.',
+    serve: 'A maca peruana selvagem melhora significativamente o desejo e o vigor sexual crônico.',
     benefits: ['Desejo Restaurado', 'Estímulo Dopaminérgico', 'Vigor Mental'],
     ingredients: [
-      { name: 'Maca Peruana em pó', qty: '3g' },
-      { name: 'Tribulus Terrestris', qty: '500mg' },
+      { name: 'Pó de Maca Peruana Negra ativa', qty: '3g (1 colher de chá)' },
+      { name: 'Tribulus Terrestris em pó', qty: '1 colher de chá' },
       { name: 'Bicarbonato de sódio', qty: '1/4 de colher de café (aprox. 1g)' },
-      { name: 'Zinco', qty: '30mg' },
-      { name: 'Banana', qty: '1 unidade' },
-      { name: 'Cacau em pó puro', qty: '30g' },
-      { name: 'Leite vegetal', qty: '200ml' },
-      { name: 'Mel', qty: '1 colher' }
+      { name: 'Sementes de girassol trituradas', qty: '1 colher de sopa (Zinco natural)' },
+      { name: 'Banana prata', qty: '1 unidade' },
+      { name: 'Cacau 100% puro em pó', qty: '30g (Teobromina natural)' },
+      { name: 'Leite de coco caseiro', qty: '200ml' },
+      { name: 'Mel silvestre puro', qty: '1 colher sopa' }
     ],
     instructions: [
-      'Bater tudo no liquidificador.',
-      'Tomar pela manhã.'
+      'Bater tudo no liquidificador e tomar pela manhã para estimular os neurotransmissores do desejo.'
     ],
     tips: [
       'O cacau contém teobromina, um estimulante natural de bem-estar.',
@@ -282,25 +283,25 @@ export const TONICS: Record<string, Tonic> = {
   },
   'suplemento-hormonal-natural': {
     id: 'suplemento-hormonal-natural',
-    name: 'Suplemento Hormonal Natural',
+    name: 'Elixir de Alimentação Hormonal',
     icon: 'Dna',
     type: 'complementary',
     category: 'sem-tesao',
     timing: 'Manhã com café da manhã',
-    serve: 'Zinco e Vitamina D3 são pilares da produção de testosterona.',
+    serve: 'Zinco, magnésio e precursores de vitamina D obtidos de fontes vivas suportam a testosterona.',
     benefits: ['Suporte Hormonal', 'Otimização de Testo', 'Saúde Metabólica'],
     ingredients: [
-      { name: 'Maca Peruana', qty: '3g' },
-      { name: 'Zinco quelato', qty: '30mg' },
-      { name: 'Magnésio', qty: '200mg' },
-      { name: 'Vitamina D3', qty: '3000 UI' },
-      { name: 'Tribulus Terrestris', qty: '500mg' }
+      { name: 'Maca Peruana em pó', qty: '3g' },
+      { name: 'Sementes de abóbora douradas moídas', qty: '2 colheres de sopa (Zinco biodisponível)' },
+      { name: 'Amêndoas ou Sementes de Girassol', qty: '1 colher de sopa (Magnésio)' },
+      { name: 'Cogumelos Portobello desidratados ao sol', qty: '1 colher de pó (Vitamina D natural)' },
+      { name: 'Tribulus Terrestris em pó', qty: '1 colher de chá' }
     ],
     instructions: [
-      'Tomar com o café da manhã.',
+      'Misturar todos os pós orgânicos no alimento ou tomar na forma de shake com o café da manhã de forma diária.',
       'Uso diário por no mínimo 8 semanas.'
     ],
-    tips: ['A constância é chave para regular os níveis hormonais.']
+    tips: ['A absorção por alimentos naturais e fontes orgânicas otimiza a conversão e sinalização testicular sem sobrecarga hepática.']
   },
   'cha-energizante': {
     id: 'cha-energizante',
