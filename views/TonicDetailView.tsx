@@ -183,9 +183,27 @@ export const TonicDetailView: React.FC<TonicDetailViewProps> = ({ tonic, isMain,
             </div>
             
             {formulaMode === 'booster' && (
-              <div className="p-4 rounded-xl bg-red-50 border border-red-100 text-[#E63946] text-xs font-semibold leading-normal animate-in slide-in-from-top-2 duration-300 text-left">
-                <span className="font-bold uppercase tracking-wider block mb-1">🔥 ALERTA POTENCIALIZADOR:</span>
-                Substituímos ativos tradicionais por suplementos puros concentrados de altíssima pureza. Você pode comprá-los em gramas em qualquer casa de produtos naturais ou farmácia de manipulação para acelerar os resultados de forma imediata!
+              <div className="p-5 rounded-2xl bg-red-50/80 border border-red-100 text-[#E63946] text-xs font-semibold leading-normal animate-in slide-in-from-top-2 duration-300 text-left space-y-4">
+                <style>{`
+                  @keyframes softPulse {
+                    0%, 100% { transform: scale(1); box-shadow: 0 4px 12px rgba(230, 57, 70, 0.15); }
+                    50% { transform: scale(1.02); box-shadow: 0 8px 20px rgba(230, 57, 70, 0.35); }
+                  }
+                  .animate-soft-pulse {
+                    animation: softPulse 2.5s infinite ease-in-out;
+                  }
+                `}</style>
+                <div>
+                  <span className="font-bold uppercase tracking-wider block mb-1">🔥 ALERTA POTENCIALIZADOR:</span>
+                  Substituímos ativos tradicionais por suplementos puros concentrados de altíssima pureza
+                </div>
+                <button
+                  type="button"
+                  onClick={() => onNavigate(View.UPSELL)}
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#E63946] text-white font-extrabold uppercase tracking-wider text-xs flex items-center justify-center gap-2 transition-all animate-soft-pulse cursor-pointer hover:bg-[#d62e3d] active:scale-95 text-center"
+                >
+                  🛒 Adquirir potencializador
+                </button>
               </div>
             )}
           </div>
